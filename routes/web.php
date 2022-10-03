@@ -3,6 +3,7 @@
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostResourceController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -45,4 +46,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 });
 
-
+// Route::get('/products', function () {
+//     return view('products.products');
+// });
+Route::get('/products', [ProductController::class, 'index']);
+Route::post('/add-products', [ProductController::class, 'addProduct'])->name('addProduct');

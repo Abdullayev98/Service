@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 <body>
+  <div class="table-data">
     <table class="table table-bordered m-2 border">
         <thead>
           <tr>
@@ -25,6 +26,7 @@
             @endforeach
         </tbody>
       </table>
+    </div>
   
 
 </body>
